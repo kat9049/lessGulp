@@ -1,8 +1,89 @@
-@color: red;
+//.bgc (){
+//  background-color: red;
+//  font-size: 10px;
+//  font-width: bold;
+//  &:hover {
+//    color: blue;
+//  }
+//};
+//
+//.test {
+//  .bgc;
+//  font-size: 20px;
+//};
+//
+//.test2 {
+//  .bgc();
+//}
+
+//.mixin(){
+//  .red{
+//    color: red;
+//  }
+//  .blue{
+//    color: blue;
+//  }
+//};
+//
+//.test {
+//  .mixin>.red
+//}
+
+
+//.mixin(@radius, @padding){
+//  border-radius: @radius;
+//  padding: @padding;
+//};
+//
+//.test {
+//  .mixin(15px, 20px);
+//}
+
+
+
+//.mixin(@width: 1px, @type: solid, @color: #000){
+//  border: @arguments;
+//};
+//
+//.test{
+//  .mixin(@color: red)
+//}
+
+//.mixin (){
+//  @width: 10px;
+//  @height: 20px;
+//};
+//
+//.test {
+//  .mixin;
+//  width: @width;
+//  height: @height;
+//}
+
+
+//.mixin (@a, @b){
+//  @average: ((@a+@b)/2);
+//};
+//
+//.test {
+//  .mixin(30px, 90px);
+//  width: @average;
+//}
+
+
+.mixin (@padding, @width: 97%){
+  .padWidth(@color: #fff){
+    padding: @padding;
+    width: @width;
+    color: @color;
+  }
+};
 
 .test {
-  background-color: @color;
-}
-.f {
-  background-color: @color;
+  .mixin(30px, 52%);
+  .padWidth(#bbb);
+
+  &.test3 {
+    .padWidth(blue)
+  }
 }
