@@ -71,19 +71,157 @@
 //}
 
 
-.mixin (@padding, @width: 97%){
-  .padWidth(@color: #fff){
-    padding: @padding;
-    width: @width;
-    color: @color;
-  }
-};
+//.mixin (@padding, @width: 97%){
+//  .padWidth(@color: #fff){
+//    padding: @padding;
+//    width: @width;
+//    color: @color;
+//  }
+//};
+//
+//.test {
+//  .mixin(30px, 52%);
+//  .padWidth(#bbb);
+//
+//  &.test3 {
+//    .padWidth(blue)
+//  }
+//}
+
+//Вложенность
+//.test {
+//  display: block;
+//  &:hover {
+//    font-size: 30px;
+//  }
+//
+//  & .div1{
+//    border: 1px solid black;
+//
+//    & span {
+//      font-size: 20px ;
+//    }
+//  }
+//  .test2 &{
+//    background-color: antiquewhite;
+//  }
+//}
+
+
+//Операторы
+//.test {
+//  width: ((100px + 40px)/9)*10;
+//}
+//
+//@headerHeight: 45px;
+//@headerPadding: 10px;
+//@bodyWidth: 1100px;
+//
+//.test{
+//  height: @headerHeight+@headerPadding;
+//  width: 10em+3;
+//}
+
+
+//@basecolor: #224466;
+//
+//.test {
+//  color: @basecolor/2;
+//}
+
+
+//Наследование
+//.btn {
+//  display: inline;
+//  color: red;
+//  background-color: blue;
+//};
+//
+//.button_date{
+//  &:extend(.btn);
+//  border-radius: 3px;
+//}
+
+//.btn {
+//  display: inline;
+//  color: red;
+//  background-color: blue;
+//  & .btn_red {
+//    font-size: 30px;
+//  }
+//};
+//
+//.button_date{
+//  &:extend(.btn .btn_red, .btn);
+//  border-radius: 3px;
+//}
+
+
+// .btn {
+//   display: inline;
+// }
+//
+//.e .btn{
+//  font-size: 20px;
+//}
+//
+//#id {
+//  font-weight: bold;
+//  .test2 & {
+//    border: 1px solid;
+//  }
+//}
+//
+//.button_date {
+//  &:extend(.btn all, .test2 #id) ;
+//  border-radius: 2px;
+//}
+
+
+
+//Циклы
+//.loop(@i) when (@i > 0){
+//  width: @i * 10px;
+//  .loop(@i - 1)
+//};
+//
+//.test{
+//  .loop(5);
+//}
+
+//.generateBootstrap (@n, @name, @i: 1) when (@i =< @n) {
+//  .col-@{name}-@{i} {
+//    width: ((@i * 100%) / @n);
+//  }
+//  .generateBootstrap(@n, @name, @i + 1)
+//}
+//
+//.generateBootstrap(12, xs);
+//.generateBootstrap(12, md);
+//.generateBootstrap(12, lg);
+
+
+
+
+//Импорт
+//@import "new";
+
+//@import (less) "css.css";
+
+//
+//@import (less) "params.less";
+//.test {
+//  width: @viewportMain;
+//  background: @mainColor;
+//}
+
+
+
+//Встрренные функции
+
+@testcolor: red;
 
 .test {
-  .mixin(30px, 52%);
-  .padWidth(#bbb);
-
-  &.test3 {
-    .padWidth(blue)
-  }
+  background: darken(@testcolor, 10%) ;
+  width: ceil(100% / 3);
 }
